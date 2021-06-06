@@ -7,11 +7,14 @@ export const StyledInput = styled(Input)`
     border: 1px solid #EFEFEF;
     border-radius: 12px;
     opacity: 1;
-  .ant-input-suffix .ant-input-preffix {
+
+   
+  .ant-input-suffix, .ant-input-prefix .anticon {
     color: #727272;
     opacity: 0.5;
     width: 19px;
     height: 19px;
+    font-size: 16px;
   }
   ::placeholder {
     text-align: left;

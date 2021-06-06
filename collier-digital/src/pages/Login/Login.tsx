@@ -2,7 +2,7 @@ import { FC, useState } from "react";
 import * as S from "./styles";
 import { Form, message } from "antd";
 import { EyeFilled, EyeInvisibleFilled, LockOutlined, RedEnvelopeOutlined  } from "@ant-design/icons";
-import background from "../../assets/login-background-big.png";
+/* import background from "../../assets/login-background-big.png"; */
 //import logo from "../../assets/compal-logo-big.png";
 import { useHistory } from "react-router";
 import { ISignIn, signIn } from "../../services/login";
@@ -10,6 +10,7 @@ import Input from "../../components/Input/Input";
 import Button from "../../components/Button/Button";
 import * as routes from "../../routes/paths";
 import {Link} from 'react-router-dom';
+
 
 
 //TODO verify field name username or email
@@ -44,8 +45,11 @@ const Login: FC = () => {
           {/* <S.BackgroundImage src={background} alt="collier"></S.BackgroundImage> */}
         </S.BackgroundImageWrapper>
         <S.LoginFormWrapper>
+          <S.LoginForm>
           <S.Title>Entrar</S.Title>
-          <S.Subtitle>Faça login em sua conta usando e-mail e senha fornecidos durante o cadastro.</S.Subtitle>
+          <S.Subtitle>Faça login em sua conta usando e-mail e senha fornecidos 
+            durante o cadastro.
+          </S.Subtitle>
           <Form onFinish={handleLogin}>
             <S.StyledFormItem             
               name="username"
@@ -56,7 +60,6 @@ const Login: FC = () => {
               <Input prefix={<RedEnvelopeOutlined />} placeholder="E-mail" />
             </S.StyledFormItem>
             <S.StyledFormItem
-              label="Senha"
               name="password"
               labelCol={{ span: 24 }}
               rules={[{ required: true, message: "Insira sua senha" }]}
@@ -86,8 +89,14 @@ const Login: FC = () => {
             <Button type="primary" htmlType="submit" loading={isLoading}>
               Entrar
             </Button>
-            <S.LinkText>Não tem uma conta? <S.StyledSpan><Link to={ routes.REGISTER }>Inscreva-se</Link></S.StyledSpan></S.LinkText>
+            <S.LinkText >Não tem uma conta? <S.StyledSpan><Link  to={ routes.REGISTER }>Inscreva-se
+               </Link>
+            </S.StyledSpan>
+            </S.LinkText>
           </Form>
+
+          </S.LoginForm>
+         
         </S.LoginFormWrapper>        
       </S.Container>
     );

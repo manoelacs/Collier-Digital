@@ -9,10 +9,11 @@ export const Container = styled.div`
   justify-content: center;
 `;
 
+
 export const LoginFormWrapper = styled.div`
   display: flex;
-  width: 100%;
-  flex-direction: column;
+  width: calc(100vw/2);
+  
   justify-content: center;
   padding: 0 2rem;
   @media (max-width: 760px) {
@@ -22,8 +23,13 @@ export const LoginFormWrapper = styled.div`
     width: 100%;
   }
 `;
+export const LoginForm = styled.div`
+   display: flex;
+   flex-direction:column;
+   justify-content: center;
+   width:250px;
+`
 export const Title = styled.p`
-    width: 250px;
     height: 56px;
     text-align: center;
     font: normal normal bold 25px/20px Poppins;
@@ -40,7 +46,11 @@ export const Subtitle = styled.p`
 `;
 export const BackgroundImageWrapper = styled.div`
     height: 100vh;
-    width: 50%;
+    width: calc(100vw/2);
+    *, *::before, *::after {
+     box-sizing: inherit; 
+}
+    box-sizing: initial;
     background: transparent linear-gradient(321deg, #007BFF 0%, #1A008E 100%) 0% 
     0% no-repeat padding-box;
     opacity: 1;
@@ -55,7 +65,8 @@ export const BackgroundImage = styled.img`
   //background: green;
 `;
 export const StyledFormItem = styled(Form.Item)`
-  margin-bottom: 16px;
+  margin-bottom: 16px;  
+  
   .ant-form-item-label {
     padding: 0;
   }
@@ -74,12 +85,18 @@ export const LinkText = styled.p`
   color: #727272;
   opacity: 1;
   cursor: pointer;
-  width: fit-content;
+ // width: fit-content;
   margin-left: auto;
+  a { 
+    color: #727272;
+  }
 `;
 export const StyledSpan = styled.span`
     text-align: center;
     font: normal normal bold 14px/20px Poppins;
     letter-spacing: 0px;
-    color: #007BFF;
+    
+    a { 
+      color: #007BFF;
+  }
 `;
