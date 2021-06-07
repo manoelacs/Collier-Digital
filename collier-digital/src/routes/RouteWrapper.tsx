@@ -1,6 +1,6 @@
 import React from "react";
 import { Redirect, Route, RouteProps } from "react-router-dom";
-//import Layout from "../components/Layout/Layout";
+import Layout from "../components/Layout/Layout";
 import { getAuthenticationToken } from "../services/api"; 
 import * as routes from "./paths";
 
@@ -21,10 +21,9 @@ const RouteWrapper: React.FC<Props> = ({ isPrivate, ...props}) => {
 
   if (isPrivate) {
     return (
-        null
-     /*  <Layout>
+     <Layout>
         <Route {...props} />
-      </Layout> */
+      </Layout> 
 
     );
   }
