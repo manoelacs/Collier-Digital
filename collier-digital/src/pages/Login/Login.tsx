@@ -27,7 +27,7 @@ const Login: FC = () => {
     const handleLogin = async (values: ISignIn) => {
       setIsLoading(true);
       try {
-        await signIn(values);
+        await signIn(values)
         history.push(routes.HOME);
       } catch (error) {
         message.error(
