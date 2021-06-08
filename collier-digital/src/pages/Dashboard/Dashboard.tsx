@@ -1,13 +1,26 @@
 import { Row, Space } from 'antd';
-import React, { FC } from 'react';
+import React, { FC, useState } from 'react';
 import { ArrowDownOutlined, ArrowUpOutlined, StarOutlined, WarningOutlined  } from '@ant-design/icons'
 import SubHeader from '../../components/SubHeader/SubHeader';
 import CardDashboard from '../../components/CardDashboard/CardDashboard';
 import * as S from './styles';
 import {TOKEN_KEY} from "../../services/api";
+import {useHistory, useLocation} from "react-router-dom";
+import * as routes from '../../routes/paths';
 
 
 const Dashboard: FC = (props: any) => {
+  const history = useHistory();
+  const location = useLocation();
+  const [selectedMenuTab, setSelectedMenuTab] = useState<string>(
+    history.location.pathname
+  );
+  
+  const goTo = (/* item: { name?: string; url: any; } */) => {
+    history.push(routes.PRODUCTS);    
+    window.location.reload();
+    //setSelectedMenuTab(item.url);
+  } 
   
   const getToken = () => {
     const token = sessionStorage.getItem(TOKEN_KEY);
@@ -36,6 +49,7 @@ const Dashboard: FC = (props: any) => {
                     icon = {<ArrowDownOutlined style={{color: '#007BFF', fontSize: '30px'}}/>}
                     color= '#007BFF'
                     codigo='02'
+                    goTo = { goTo }
                 />
           </S.StyledCol>
 
@@ -46,6 +60,7 @@ const Dashboard: FC = (props: any) => {
                     icon = {<ArrowUpOutlined style={{color: '#9B59B6', fontSize: '30px'}} />}
                     color= '#9B59B6'
                     codigo='02'
+                    goTo = { goTo }
                  />           
           </S.StyledCol>
 
@@ -56,6 +71,7 @@ const Dashboard: FC = (props: any) => {
                     icon = {<StarOutlined  style={{color: '#2ECC71', fontSize: '30px'}} />}
                     color= '#2ECC71'
                     codigo='01'
+                    goTo = { goTo }
                  />  
            
           </S.StyledCol>
@@ -66,6 +82,7 @@ const Dashboard: FC = (props: any) => {
                     icon = {<WarningOutlined style={{color: '#F1C40F', fontSize: '30px'}} />}
                     color= '#F1C40F'
                     codigo='01'
+                    goTo = { goTo }
                 />  
            
           </S.StyledCol> 

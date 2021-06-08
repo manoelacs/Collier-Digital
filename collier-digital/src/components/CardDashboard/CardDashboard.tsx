@@ -8,9 +8,15 @@ interface ICardProps{
     subtitle?: string;
     color?:any;
     codigo?:string;
+    goTo?: () => void;
 }
 
-const CardDashboard:FC<ICardProps> = ({icon, title, subtitle, color, codigo}) => {
+const CardDashboard:FC<ICardProps> = ({icon, title, subtitle, color, codigo, goTo }) => {
+
+    const handleClick = () => {
+
+    }
+    
     return(
         <S.Container>
             <S.StyledRow>
@@ -26,7 +32,7 @@ const CardDashboard:FC<ICardProps> = ({icon, title, subtitle, color, codigo}) =>
                         </S.ColLeftUp>
 
                         <S.ColLeftDow  >
-                            <S.StyledButton color={color}>Ver mais</S.StyledButton>
+                            <S.StyledButton onClick={ goTo } color={color}>Ver mais</S.StyledButton>
                         </S.ColLeftDow>
                     </Row>
                     

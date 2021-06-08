@@ -22,8 +22,8 @@ const Header: FC = (props: any) => {
   };
   const navMenuList = [
     {name: "Início", url: routes.HOME},
-    {name: "Produtos", url: "/produtos"},
-    {name: "Mix de Produtos", url: "/mix_de_produtos"},
+    {name: "Produtos", url: routes.PRODUCTS},
+    {name: "Mix de Produtos", url: routes.MIX_DE_PRODUTOS},
   ];
   const profileMenu = () => (
     <Menu>

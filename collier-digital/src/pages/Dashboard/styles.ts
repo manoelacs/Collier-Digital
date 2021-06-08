@@ -4,7 +4,7 @@ import styled from "styled-components";
 
 export const StyledWrapper = styled.div`
     height: 100%;
-    margin-left: 80px;
+    //margin-left: 80px;
     margin-bottom: 137px;
 `;
 export const StyledContent = styled(Content)`

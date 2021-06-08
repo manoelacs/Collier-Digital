@@ -8,8 +8,9 @@ export const SubHeader = styled(Header)`
   /* height: 100px;
   max-height: 150px; */
   background: #FCFCFC;
- // padding: 0px 80px;
-  margin-top: 50px
+  margin-top: 50px;
+  padding: 0 0px;
+    
   
 `;
 

@@ -18,4 +18,6 @@ export const Content = styled.div`
   opacity: 1;
   flex: 1 1 auto;
   padding-bottom: 16px;
+  padding-left: 80px;
+  min-height: 800px;
 `;
