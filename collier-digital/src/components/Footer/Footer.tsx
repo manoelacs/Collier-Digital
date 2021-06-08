@@ -2,7 +2,7 @@ import { FC } from "react";
 import * as S from "./styles";
 
 const Footer: FC = (props: any) => (
-    <S.StyledFooter>
+    <S.StyledFooter style={{ textAlign: 'center' }}>
         <span>©2020 Collier Digital </span>
     </S.StyledFooter>
 )

@@ -1,6 +1,6 @@
 import React, {FC, useState} from "react";
 import * as S from "./styles";
-import logo from "./../../assets/Logo/compal.png";
+//import logo from "./../../assets/Logo/compal.png";
 import {Menu, Select} from "antd";
 import {CaretDownFilled, UserOutlined} from "@ant-design/icons";
 import {useHistory, useLocation} from "react-router-dom";
@@ -70,23 +70,26 @@ const Header: FC = (props: any) => {
   };
   return (
     <S.StyledHeader>
-      <S.StyledHeaderLogo alt="logo" src={logo}/>
+     {/*  <S.StyledHeaderLogo alt="logo" src={logo}/> */}
+      <S.StyledSpace/> 
       <S.StyledMenu mode="horizontal" selectedKeys={[selectedMenuTab]}>
         {navMenuOptions()}
       </S.StyledMenu>
-      <S.StyledSpace/>
+      
+      
      
       <S.StyledHeaderButton type="text">
         <S.StyledNotificationIcon/>
       </S.StyledHeaderButton>
-      <S.StyledHeaderDivider/>
-      <S.StyledHeaderDivider/>
 
-      <S.StyledHeaderProfileDropdown overlay={profileMenu} trigger={["click"]}>
+      <S.StyledHeaderDivider/> 
+
+
+       <S.StyledHeaderProfileDropdown overlay={profileMenu} trigger={["click"]}>
         <S.StyledHeaderProfileButton type="text">
           <S.StyledAvatar icon={<UserOutlined/>}/>
         </S.StyledHeaderProfileButton>
-      </S.StyledHeaderProfileDropdown>
+      </S.StyledHeaderProfileDropdown> 
     </S.StyledHeader>
   );
 };

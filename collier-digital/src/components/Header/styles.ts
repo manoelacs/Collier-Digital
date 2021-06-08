@@ -18,6 +18,9 @@ export const StyledHeader = styled(Header)`
     * {
         max-height: 80px;
     }
+    .ant-layout-header {
+    background: transparent linear-gradient(274deg, #007BFF 0%, #1A008E 100%) 0% 0%
+}
     .ant-menu-horizontal {
         border: 0px;
     }
@@ -25,15 +28,20 @@ export const StyledHeader = styled(Header)`
         top: 0px;
         border: 0px;
     }
-    .ant-menu-horizontal:not(.ant-menu-dark) > .ant-menu-item:hover, .ant-menu-horizontal:not(.ant-menu-dark) > .ant-menu-submenu:hover, .ant-menu-horizontal:not(.ant-menu-dark) > .ant-menu-item-active, .ant-menu-horizontal:not(.ant-menu-dark) > .ant-menu-submenu-active, .ant-menu-horizontal:not(.ant-menu-dark) > .ant-menu-item-open, .ant-menu-horizontal:not(.ant-menu-dark) > .ant-menu-submenu-open, .ant-menu-horizontal:not(.ant-menu-dark) > .ant-menu-item-selected, .ant-menu-horizontal:not(.ant-menu-dark) > .ant-menu-submenu-selected {
+    .ant-menu-horizontal:not(.ant-menu-dark) > .ant-menu-item:hover,
+    .ant-menu-horizontal:not(.ant-menu-dark) > .ant-menu-submenu:hover,
+    .ant-menu-horizontal:not(.ant-menu-dark) > .ant-menu-item-active, 
+    .ant-menu-horizontal:not(.ant-menu-dark) > .ant-menu-submenu-active, 
+    .ant-menu-horizontal:not(.ant-menu-dark) > .ant-menu-item-open, 
+    .ant-menu-horizontal:not(.ant-menu-dark) > .ant-menu-submenu-open, 
+    .ant-menu-horizontal:not(.ant-menu-dark) > .ant-menu-item-selected, 
+    .ant-menu-horizontal:not(.ant-menu-dark) > .ant-menu-submenu-selected {
         color: #FFFFFF;        
         background :#1A008E;        
         box-sizing: border-box;
     }
 `;
 export const StyledMenu = styled(Menu)`
-    height: 80px;
-    width: 100%;
     letter-spacing: 0px;
     color: #FFFFFF;
     text-align: left;
@@ -41,6 +49,8 @@ export const StyledMenu = styled(Menu)`
     text-transform: initial;
     opacity: 1;
     border-bottom: 0px;
+    background: none;
+    margin-right: 30px;
 `;
 export const StyledSpace = styled.div`
     margin: auto;
@@ -58,7 +68,7 @@ export const StyledHeaderLogo = styled.img`
 
 export const StyledHeaderDivider = styled.div`
     display: inline-block;
-    height: 100%;
+    height: 60%;
     border-right: 1px solid #EBF2EA;
 `;
 
@@ -71,14 +81,17 @@ export const  StyledAvatar =  styled(Avatar)`
     background-color: #007BFF;
     border: 2px solid #FFFFFF;
     opacity: 0.5;
+    
 `;
 
 export const StyledHeaderProfileButton = styled(Button)`
     height: 50px;
     width: 50px;
+    
 `;
 
 export const StyledHeaderProfileDropdown = styled(Dropdown)`
+    margin-right: 75px;
     .anticon-caret-down {
         color: #3F7E06;
         font-size: 12px;
