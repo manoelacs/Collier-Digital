@@ -28,8 +28,8 @@ const Dashboard: FC = (props: any) => {
       />
 
       <S.StyledContent>
-       { <Row justify="space-around" gutter={[24, 24]}>
-          <S.StyledCol span={6}>
+       { <Row   gutter={[16, 16]}>
+          <S.StyledCol offset={1} span={10}>
                  <CardDashboard 
                     title="Preço muito baixo"
                     subtitle='It is a long established fact that a reader will bet.'
@@ -39,7 +39,7 @@ const Dashboard: FC = (props: any) => {
                 />
           </S.StyledCol>
 
-          <S.StyledCol span={6}>
+          <S.StyledCol  span={10}>
                 <CardDashboard 
                     title="Preço muito acima"
                     subtitle='It is a long established fact that a reader will bet.'
@@ -49,26 +49,26 @@ const Dashboard: FC = (props: any) => {
                  />           
           </S.StyledCol>
 
-          {/* <S.StyledCol span={6}>
+           <S.StyledCol offset={1} span={10}>
                 <CardDashboard 
                     title="Estoque exclusivo"
                     subtitle='It is a long established fact that a reader will bet.'
-                    icon = {<StarOutlined  style={{color: '#2ECC71', fontSize: '30px'}} />}/>}
+                    icon = {<StarOutlined  style={{color: '#2ECC71', fontSize: '30px'}} />}
                     color= '#2ECC71'
                     codigo='01'
                  />  
            
           </S.StyledCol>
-          <S.StyledCol span={6}>
+          <S.StyledCol span={10}>
                 <CardDashboard 
                     title="Ruptura"
                     subtitle='It is a long established fact that a reader will bet.'
-                    icon = {<WarningOutlined style={{color: '#F1C40F', fontSize: '30px'}} />}/>}
+                    icon = {<WarningOutlined style={{color: '#F1C40F', fontSize: '30px'}} />}
                     color= '#F1C40F'
                     codigo='01'
                 />  
            
-          </S.StyledCol> */}
+          </S.StyledCol> 
          
         </Row>}
       </S.StyledContent>

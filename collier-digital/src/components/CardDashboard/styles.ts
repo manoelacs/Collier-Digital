@@ -6,7 +6,7 @@ import { ArrowUpOutlined, } from '@ant-design/icons'
 export const Container = styled.div`
     display: flex;
     flex-direction: row;
-    width: 545px;
+    /* width: 545px; */
     height: 180px;
     background: #FFFFFF 0% 0% no-repeat padding-box;
     box-shadow: 0px 3px 15px #00000008;
