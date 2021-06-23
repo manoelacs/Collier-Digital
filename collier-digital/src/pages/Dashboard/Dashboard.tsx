@@ -42,7 +42,7 @@ const Dashboard: FC = (props: any) => {
 
       <S.StyledContent>
        { <Row   gutter={[16, 16]}>
-          <S.StyledCol offset={1} span={10}>
+          <S.StyledCol  span={10}>
                  <CardDashboard 
                     title="Preço muito baixo"
                     subtitle='It is a long established fact that a reader will bet.'
@@ -64,7 +64,7 @@ const Dashboard: FC = (props: any) => {
                  />           
           </S.StyledCol>
 
-           <S.StyledCol offset={1} span={10}>
+           <S.StyledCol  span={10}>
                 <CardDashboard 
                     title="Estoque exclusivo"
                     subtitle='It is a long established fact that a reader will bet.'
