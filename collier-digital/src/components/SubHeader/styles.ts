@@ -10,7 +10,7 @@ export const SubHeader = styled(Header)`
   background: #FCFCFC;
   margin-top: 50px;
   padding: 0 0px;
-    
+  margin-bottom: 24px;    
   
 `;
 
@@ -24,8 +24,7 @@ export const StyledSubHeaderTitle = styled.p`
   overflow: hidden;
  // white-space: nowrap;
   margin: 0 0 0 0;
-  height: 20px; 
-  
+  height: 20px;   
 `;
 
 export const StyledSubHeaderSubTitle = styled.p`
@@ -37,10 +36,8 @@ export const StyledSubHeaderSubTitle = styled.p`
   text-overflow: ellipsis;
   overflow: hidden;
   white-space: nowrap;
-  margin: 5px 0 0 0; 
-  
+  margin: 5px 0 0 0;   
 `;
-
 
 export const StyledSubHeaderText = styled.div`
    overflow: hidden; 

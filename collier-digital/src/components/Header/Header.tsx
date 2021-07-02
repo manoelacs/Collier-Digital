@@ -35,7 +35,7 @@ const Header: FC = (props: any) => {
 
   const goTo = (item: { name?: string; url: any; }) => {
     history.push(item.url);    
-    window.location.reload();
+   // window.location.reload();
     setSelectedMenuTab(item.url);
   }
   const handleVerifyClick = (item: any) => {

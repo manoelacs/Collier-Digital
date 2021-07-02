@@ -37,7 +37,7 @@ const CardDashboard:FC<ICardProps> = ({icon, title, subtitle, color, codigo, goT
                     </Row>
                     
                 </S.ColLeft>
-                <Col style={{paddingTop : '45px', paddingLeft:'40px'}} >
+                <Col style={{paddingTop : '45px', paddingLeft:'30px'}} >
                     <S.StyledSpan color={color}>
                         {codigo}
                     </S.StyledSpan>

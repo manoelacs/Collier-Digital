@@ -8,6 +8,7 @@ import ProductsTable from '../../components/ProductsTable/ProductsTable';
 import * as S from './styles';
 import * as routes from '../../routes/paths';
 import BreadCrumb from '../../components/BreadCrumb/BreadCrumb';
+import BarChart from '../../components/BarChart/BarCart';
 const data = [
     { year: '1991', value: 3 },
     { year: '1992', value: 4 },
@@ -67,7 +68,7 @@ const ProductsMix: FC = () => {
                 suffix={<><Space/><BreadCrumb itens={path}/></>}
             />          
              <Fragment>
-                <Line {...config} />               
+                <BarChart/>               
                 <Row>
                     <ProductsTable/>
                 </Row>

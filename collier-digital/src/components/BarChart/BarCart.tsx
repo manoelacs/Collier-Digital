@@ -1,72 +1,51 @@
-import React from 'react';
-import { Column } from '@ant-design/charts';
+import React, { useState, useEffect } from 'react';
+import { DualAxes } from '@ant-design/charts';
+import { barConfig, configArea, configLine } from './data';
+import { TinyArea, Line, Pie } from '@ant-design/charts';
+
+
 
 const BarChart: React.FC = () => {
-  const data = [
+  var data = [
     {
-      type: '家具家电',
-      sales: 38,
+      time: '2019-03',
+      value: 350,
+      count: 800,
     },
     {
-      type: '粮油副食',
-      sales: 52,
+      time: '2019-04',
+      value: 900,
+      count: 600,
     },
     {
-      type: '生鲜水果',
-      sales: 0,
+      time: '2019-05',
+      value: 300,
+      count: 400,
     },
     {
-      type: '美容洗护',
-      sales: 145,
+      time: '2019-06',
+      value: 450,
+      count: 380,
     },
     {
-      type: '母婴用品',
-      sales: 48,
-    },
-    {
-      type: '进口食品',
-      sales: 38,
-    },
-    {
-      type: '食品饮料',
-      sales: 38,
-    },
-    {
-      type: '家庭清洁',
-      sales: 38,
+      time: '2019-07',
+      value: 470,
+      count: 220,
     },
   ];
-
-  const config = {
-    data,
-    xField: 'type',
-    yField: 'sales',
-    label: {
-      position: 'middle',
-      style: {
-        fill: '#FFFFFF',
-        opacity: 0.6,
+  var config = {
+    data: [data, data],
+    xField: 'time',
+    yField: ['value', 'count'],
+    geometryOptions: [
+      { geometry: 'column' },
+      {
+        geometry: 'line',
+        lineStyle: { lineWidth: 2 },
       },
-    },
-    meta: {
-      type: { alias: '类别' },
-      sales: { alias: '销售额' },
-    },
+    ],
   };
-
-  return (
-    <Column
-      {...config}
-      onReady={(plot) => {
-        plot.on('plot:click', (evt) => {
-          const { x, y } = evt;
-          const { xField } = plot.options;
-          const tooltipData = plot.chart.getTooltipItems({ x, y });
-          console.log(tooltipData);
-        });
-      }}
-    />
-  );
+  return <DualAxes {...config} />;
 };
 
 export default BarChart;
