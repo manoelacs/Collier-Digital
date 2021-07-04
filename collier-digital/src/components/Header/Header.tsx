@@ -1,11 +1,12 @@
 import React, {FC, useState} from "react";
 import * as S from "./styles";
 //import logo from "./../../assets/Logo/compal.png";
-import {Menu, Select} from "antd";
+import {Menu, Select, Badge} from "antd";
 import {CaretDownFilled, UserOutlined} from "@ant-design/icons";
 import {useHistory, useLocation} from "react-router-dom";
 import {signOut} from "../../services/login";
 import * as routes from "../../routes/paths";
+import AvatarImg from '../../../public/avatar.jpg';
 
 
 const {Option} = Select;
@@ -75,19 +76,22 @@ const Header: FC = (props: any) => {
       <S.StyledMenu mode="horizontal" selectedKeys={[selectedMenuTab]}>
         {navMenuOptions()}
       </S.StyledMenu>
-      
-      
-     
+      <S.StyledHeaderDivider/>      
       <S.StyledHeaderButton type="text">
-        <S.StyledNotificationIcon/>
+        <Badge dot>
+          <S.StyledNotificationIcon/>
+        </Badge>
       </S.StyledHeaderButton>
-
-      <S.StyledHeaderDivider/> 
-
-
-       <S.StyledHeaderProfileDropdown overlay={profileMenu} trigger={["click"]}>
+      <S.StyledHeaderProfileDropdown overlay={profileMenu} trigger={["click"]}>
         <S.StyledHeaderProfileButton type="text">
-          <S.StyledAvatar icon={<UserOutlined/>}/>
+          <S.StyledAvatarCircle>
+              <S.StyledAvatar 
+                shape="circle" 
+                size={40} 
+                src= {`${process.env.PUBLIC_URL}/assets/avatar.jpg`} 
+                alt='avatar'
+              />
+          </S.StyledAvatarCircle>         
         </S.StyledHeaderProfileButton>
       </S.StyledHeaderProfileDropdown> 
     </S.StyledHeader>

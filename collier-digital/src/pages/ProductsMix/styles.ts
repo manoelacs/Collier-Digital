@@ -3,7 +3,9 @@ import { Content } from "antd/lib/layout/layout";
 import styled from "styled-components";
 
 export const StyledWrapper = styled.div`
-    height: 100%;    
+   
+    display: flex;  
+    flex-direction : column;
 `;
 export const StyledContent = styled(Content)`
   padding: 30px 0px;

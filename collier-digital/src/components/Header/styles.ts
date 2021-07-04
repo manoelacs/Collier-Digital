@@ -15,6 +15,7 @@ export const StyledHeader = styled(Header)`
     box-shadow: 0px 3px 12px #00000029;
     opacity: 1;
     padding: 0 24px;
+    transition: filter 0.2s;
     * {
         max-height: 80px;
     }
@@ -36,8 +37,11 @@ export const StyledHeader = styled(Header)`
     .ant-menu-horizontal:not(.ant-menu-dark) > .ant-menu-submenu-open, 
     .ant-menu-horizontal:not(.ant-menu-dark) > .ant-menu-item-selected, 
     .ant-menu-horizontal:not(.ant-menu-dark) > .ant-menu-submenu-selected {
-        color: #FFFFFF;        
-        background :#1A008E;        
+        color: #FFFFFF; 
+        filter: brightness(0.9);
+               
+       // background :#1A008E;     
+        background   : #007BFF;
         box-sizing: border-box;
     }
 `;
@@ -78,19 +82,32 @@ export const StyledHeaderDivider = styled.div`
 `;
 
 export const  StyledAvatar =  styled(Avatar)`
-    background-color: #007BFF;
-    border: 2px solid #FFFFFF;
-    opacity: 0.5;
+
+   // background-color: #007BFF;
+   // border: 2px solid #FFFFFF;
+   // opacity: 0.5;
     
 `;
 
 export const StyledHeaderProfileButton = styled(Button)`
+
     height: 50px;
-    width: 50px;
+    width: 50px;  
     
 `;
+export const StyledAvatarCircle = styled.div`
+   
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 50px;
+    width: 50px;     
+    border: 1px solid #FFFFFF;
+    border-radius: 50%;
+`
 
 export const StyledHeaderProfileDropdown = styled(Dropdown)`
+    padding: 1px 5px;
     margin-right: 75px;
     .anticon-caret-down {
         color: #3F7E06;

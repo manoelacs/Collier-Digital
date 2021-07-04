@@ -23,8 +23,9 @@ export const StyledSubHeaderTitle = styled.p`
   text-overflow: ellipsis;
   overflow: hidden;
  // white-space: nowrap;
+  padding-top: 3px;
   margin: 0 0 0 0;
-  height: 20px;   
+  height: 30px;   
 `;
 
 export const StyledSubHeaderSubTitle = styled.p`
