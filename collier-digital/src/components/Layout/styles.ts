@@ -19,5 +19,5 @@ export const Content = styled.div`
   flex: 1 1 auto;
   padding-bottom: 16px;
   padding:  0px 80px;
-  min-height: 800px;
+  //min-height: 800px;
 `;
