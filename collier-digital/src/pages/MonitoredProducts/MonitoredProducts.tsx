@@ -24,10 +24,26 @@ const MonitoredProducts: FC = () => {
     const filterButtons = () => (
         <S.StyledRadioGroup  onChange={onChange}>
             <Radio.Button value='all' >Todos</Radio.Button>
-            <Radio.Button value="02-blue"> <ArrowDownOutlined style={{color: '#007BFF', fontSize: '15px'}}/>02</Radio.Button>
-            <Radio.Button value="02-purple"> <ArrowUpOutlined style={{color: '#9B59B6', fontSize: '13px'}} />02</Radio.Button>
-            <Radio.Button value="01-green"> <StarOutlined  style={{color: '#2ECC71', fontSize: '13px'}} />01</Radio.Button>
-            <Radio.Button value="01-yellow"> <WarningOutlined style={{color: '#F1C40F', fontSize: '13px'}} />01</Radio.Button>
+            <Radio.Button value="02-blue"> 
+                 <ArrowDownOutlined 
+                     style={{color: '#007BFF', fontSize: '15px', marginRight:10 }}/>
+                 02                     
+            </Radio.Button>
+            <Radio.Button value="02-purple">
+                 <ArrowUpOutlined 
+                     style={{color: '#9B59B6', fontSize: '13px',  marginRight:10 }} />
+                 02
+            </Radio.Button>
+            <Radio.Button value="01-green">
+                 <StarOutlined 
+                     style={{color: '#2ECC71', fontSize: '13px',  marginRight:10}} />
+                 01
+            </Radio.Button>
+            <Radio.Button value="01-yellow">
+                 <WarningOutlined 
+                     style={{color: '#F1C40F', fontSize: '13px',  marginRight:10}} />
+                 01
+            </Radio.Button>
        </S.StyledRadioGroup>
     )
     

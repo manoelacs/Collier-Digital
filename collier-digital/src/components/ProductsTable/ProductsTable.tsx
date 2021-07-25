@@ -6,27 +6,27 @@ import * as S from './styles';
 import { upPriceColor, 
          lowPriceColor, 
          exclusiveStockColor, 
-         rupturaColor, 
-         basicGrayColor
+         basicGrayColor,
+         rupturaColor
          } from '../../variables';
 
 const ProductsTable:FC = () => {
   const dictStatus = { 
     'lowPrice': {
-        color: {lowPriceColor},
-        icon: <ArrowDownOutlined  color={lowPriceColor} style={{fontSize: '15px'}}/>
+        color: lowPriceColor,
+        icon: <ArrowDownOutlined  style={{ color: lowPriceColor, fontSize: '15px'}}/>
       },
    'upPrice':{
         color: upPriceColor,
-        icon: <ArrowUpOutlined color = {upPriceColor} style={{ fontSize: '15px'}} />
+        icon: <ArrowUpOutlined  style={{  color: upPriceColor, fontSize: '15px'}} />
       },
     'exclusiveStock':{     
       color: exclusiveStockColor,
-      icon: <StarOutlined  color = {exclusiveStockColor} style={{ fontSize: '15px'}} />
+      icon: <StarOutlined  style={{ color: exclusiveStockColor, fontSize: '15px'}} />
     }, 
     'ruptura':{
       color: rupturaColor,
-      icon: <WarningOutlined color = {exclusiveStockColor} style={{ fontSize: '15px' }} /> 
+      icon: <WarningOutlined  style={{color: rupturaColor, fontSize: '15px' }} /> 
       
     },
   };

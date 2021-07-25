@@ -54,9 +54,12 @@ margin-left: 35px;
 .ant-radio-button-wrapper {
     height: 40px;
     width: 78px;
+    border-radius: 12px;
     background: #FFFFFF 0% 0% no-repeat padding-box;
-    border-bottom: none;
-    border-top: none;
+    border: none;
+    :first-child{
+        border-left: none;
+    }
 }
 .ant-radio-button-wrapper:not(:first-child)::before {
     background: #f5f5f5;
