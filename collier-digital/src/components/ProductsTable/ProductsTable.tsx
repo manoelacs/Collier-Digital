@@ -1,28 +1,68 @@
 import { FC, ReactNode,} from 'react';
 import { Table, Tag, Space } from 'antd';
 import { ArrowDownOutlined, ArrowUpOutlined, 
-  StarOutlined, WarningOutlined  } from '@ant-design/icons'
+  StarOutlined, WarningOutlined  } from '@ant-design/icons';
+import * as S from './styles';
+import { upPriceColor, 
+         lowPriceColor, 
+         exclusiveStockColor, 
+         rupturaColor, 
+         basicGrayColor
+         } from '../../variables';
 
 const ProductsTable:FC = () => {
   const dictStatus = { 
     'lowPrice': {
-        color: '#007BFF',
-        icon: <ArrowDownOutlined style={{color: '#007BFF', fontSize: '15px'}}/>
+        color: {lowPriceColor},
+        icon: <ArrowDownOutlined  color={lowPriceColor} style={{fontSize: '15px'}}/>
       },
    'upPrice':{
-        color: '#9B59B6',
-        icon: <ArrowUpOutlined style={{color: '#9B59B6', fontSize: '15px'}} />
+        color: upPriceColor,
+        icon: <ArrowUpOutlined color = {upPriceColor} style={{ fontSize: '15px'}} />
       },
     'exclusiveStock':{     
-      color: '#2ECC71',
-      icon: <StarOutlined  style={{color: '#2ECC71', fontSize: '15px'}} />
+      color: exclusiveStockColor,
+      icon: <StarOutlined  color = {exclusiveStockColor} style={{ fontSize: '15px'}} />
     }, 
     'ruptura':{
-      color: '#F1C40F',
-      icon: <WarningOutlined style={{color: '#F1C40F', fontSize: '15px'}} /> 
+      color: rupturaColor,
+      icon: <WarningOutlined color = {exclusiveStockColor} style={{ fontSize: '15px' }} /> 
       
     },
   };
+  const renderExclusiveStock = (item: any) => {
+    // console.log(record.coverage); 
+     return(
+       <S.StyledWrapper>
+         <S.StyledButton color={item.color}> 1 de 10 </S.StyledButton>
+         <S.StyledLabel> 
+           <S.StyledSiteParagraph>{item.site}</S.StyledSiteParagraph>
+           <S.StyledSiteSpan>({item.siteName})</S.StyledSiteSpan>
+         </S.StyledLabel>
+       </S.StyledWrapper>  
+ 
+     )              
+   };
+   const renderPrice = (item: any)=>{
+     return(         
+        <Space size="middle">
+          <S.StyledSpan 
+            color = { item.color? item.color: 'black'}
+            fontWeight = { item.fontWeight? item.fontWeight: 'normal'}>
+            R$  {item.value}
+          </S.StyledSpan>
+        </Space>
+        
+     )
+   }
+   const renderPercents = (item: any)=>{
+    return(     
+       <Space size="middle">
+         <span style= {{ color: item.color? item.color: 'black'}}>{item.value}%</span>
+       </Space>     
+    )
+  }
+
   const columns = [
     {
       title: 'Staus',
@@ -44,53 +84,33 @@ const ProductsTable:FC = () => {
       title: 'Preço atual',
       dataIndex: 'price',
       key: 'price',
+      render: renderPrice,
     },
     {
       title: 'Ranking de Preços',
       key: 'ranking',
       dataIndex: 'ranking',
       color: 'color',
-      render: (tags: string[], record: any) => (
-        <>
-          {tags.map(tag => {
-            let color = tag.length > 5 ? 'geekblue' : 'green';
-            if (tag === 'loser') {
-              color = 'volcano';
-            }
-            return (
-              <Tag color={color} key={tag}>
-                {tag.toUpperCase()}
-              </Tag>
-            );
-          })}
-        </>
-      ),
+      render: renderExclusiveStock,
     },
     {
       title: 'Menor preço',
       dataIndex: 'lowPrice',
       key: 'lowPrice',
+      render: renderPrice,
     },
     {
       title: 'Diferencia de preço R$',
       dataIndex: 'realPrice',
       key: 'realPrice',
-      render: (price:number) => (
-        <Space size="middle">
-        <span>R$  {price}</span>
-      </Space>
-      ),
+      render: renderPrice,
   
     },
     {
       title: 'Diferencia de preço %',
       dataIndex: 'percentsPrice',
       key: 'percentsPrice',
-      render: (price: number) => (
-        <Space size="middle">
-          <span>{price}%</span>
-        </Space>
-      ),
+      render: renderPercents,
     },
     /* {
       title: 'Action',
@@ -106,47 +126,47 @@ const ProductsTable:FC = () => {
   const data = [
     {
       key: '1',
-      status: [dictStatus['lowPrice'].icon],
+      status:  [dictStatus['lowPrice'].icon],
       code:'12345678',
       name: 'John Brown',
-      price: 150,
-      ranking: ['www.pontofrio.com.bb', 'Pontofrio'],
-      lowPrice: 150,
-      realPrice: 0,
-      percentsPrice: 0,
+      price: {value: 150, fontWeight:600},
+      ranking: {site: 'www.pontofrio.com.br', siteName: 'Pontofrio', color: lowPriceColor },
+      lowPrice:{value: 150},
+      realPrice:{value: 0, color: lowPriceColor},
+      percentsPrice: {value: 0, color: lowPriceColor},
     },
     {
       key: '2',
       status: [dictStatus['upPrice'].icon],
       code:'12345678',
       name: 'John Brown',
-      price: 150,
-      ranking: ['www.pontofrio.com.bb', 'Pontofrio'],
-      lowPrice: 150,
-      realPrice: 0,
-      percentsPrice: 0,
+      price: {value: 150, fontWeight:600},
+      ranking: {site: 'www.pontofrio.com.br', siteName: 'Pontofrio', color: upPriceColor},
+      lowPrice:{value: 150},
+      realPrice:{value: 0, color: upPriceColor},
+      percentsPrice: {value: 0, color: upPriceColor},
     },
     {
       key: '3',
       status:  [dictStatus['exclusiveStock'].icon],
       code:'12345678',
       name: 'John Brown',
-      price: 150,
-      ranking: ['www.pontofrio.com.bb', 'Pontofrio'],
-      lowPrice: 150,
-      realPrice: 0,
-      percentsPrice: 0,
+      price: {value: 150, fontWeight:600},
+      ranking: {site: 'www.pontofrio.com.br', siteName: 'Pontofrio', color: exclusiveStockColor },
+      lowPrice:{value: 150},
+      realPrice:{value: 0, color: exclusiveStockColor},
+      percentsPrice: {value: 0, color: exclusiveStockColor},
     },
     {
       key: '3',
       status:  [dictStatus['ruptura'].icon],
       code:'12345678',
       name: 'John Brown',
-      price: 150,
-      ranking: ['www.pontofrio.com.bb', 'Pontofrio'],
-      lowPrice: 150,
-      realPrice: 0,
-      percentsPrice: 0,
+      price: {value: 150, fontWeight:600},
+      ranking: {site: 'www.pontofrio.com.br', siteName: 'Pontofrio', color: rupturaColor },
+      lowPrice:{value: 150},
+      realPrice:{value: 0, color: rupturaColor},
+      percentsPrice: {value: 0, color: rupturaColor},
     },
   ];
   
