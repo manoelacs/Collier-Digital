@@ -28,11 +28,19 @@ const MonitoredProductsTable:FC = () => {
    // console.log(record.coverage); 
     return(
       <S.StyledColumnItem>
-        <div>{item.value}</div>
+        <div style={ {marginRight: 10 }} >{item.value}</div>
         <S.StyledHeaderDivider/>
         <S.ProgressContainer > 
-          <span>{item.value} ,00% </span>
-          <Progress percent={item.value} size="small" strokeColor={item.color} status="active" showInfo={false}/>
+          <S.Div>
+            <span >{item.value} ,00% </span>
+            <Progress 
+              percent={item.value} 
+              size="small" 
+              strokeColor={item.color} 
+              status="active" 
+              showInfo={false}/>
+          </S.Div>
+          
         </S.ProgressContainer>
         
 
