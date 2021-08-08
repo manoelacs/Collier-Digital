@@ -27,28 +27,27 @@ const MonitoredProductsTable:FC = () => {
   const renderProgressBar = (item: any) => {
    // console.log(record.coverage); 
     return(
-      <S.StyledColumnItem>
-        <div style={ {marginRight: 10 }} >{item.value}</div>
-        <S.StyledHeaderDivider/>
+      <S.StyledColumnItem> 
+        { (item.kei !== 'coverage')?
+        <>
+          <S.StyledNumber style={ {marginRight: 10 }} >{item.value}</S.StyledNumber>
+          <S.StyledHeaderDivider/>
+        </>
+         : null
+        }         
         <S.ProgressContainer > 
           <S.Div>
-            <span >{item.value} ,00% </span>
+            <S.StyledNumber >{item.value} ,00% </S.StyledNumber>
             <Progress 
               percent={item.value} 
               size="small" 
               strokeColor={item.color} 
               status="active" 
               showInfo={false}/>
-          </S.Div>
-          
-        </S.ProgressContainer>
-        
-
+          </S.Div>          
+        </S.ProgressContainer> 
       </S.StyledColumnItem>
-      
-
-    )
-              
+    )              
   };
   
 
@@ -63,6 +62,10 @@ const MonitoredProductsTable:FC = () => {
       title: 'Produtos',
       dataIndex: 'products',
       key: 'products',
+      render: (item: any) => ( <S.StyledNumberBold  key={item}>
+                {item}
+              </S.StyledNumberBold >        
+      ),
     },
     {
       title: 'Cobertura',
@@ -168,6 +171,6 @@ const MonitoredProductsTable:FC = () => {
   
   
     return( 
-        <Table columns={columns} dataSource={data} /> 
+        <S.StyledTable columns={columns} dataSource={data}  className='monitoredTable'/> 
     )
 }; export default MonitoredProductsTable;

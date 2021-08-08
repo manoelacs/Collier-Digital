@@ -47,7 +47,7 @@ const ProductsTable:FC = () => {
      return(         
         <Space size="middle">
           <S.StyledSpan 
-            color = { item.color? item.color: 'black'}
+            color = { item.color? item.color: '#727272'}
             fontWeight = { item.fontWeight? item.fontWeight: 'normal'}>
             R$  {item.value}
           </S.StyledSpan>
@@ -79,6 +79,7 @@ const ProductsTable:FC = () => {
       title: 'Nome do Produto',
       dataIndex: 'name',
       key: 'name',
+      render: (item: any) => (<S.ProductName>{item}</S.ProductName>)
     },
     {
       title: 'Preço atual',
@@ -94,20 +95,20 @@ const ProductsTable:FC = () => {
       render: renderExclusiveStock,
     },
     {
-      title: 'Menor preço',
+      title: <S.TableCustonHeader>Menor preço <span>Concorrente</span></S.TableCustonHeader>,
       dataIndex: 'lowPrice',
       key: 'lowPrice',
       render: renderPrice,
     },
     {
-      title: 'Diferencia de preço R$',
+      title: <S.TableCustonHeader>Diferencia R$ <span>Concorrente</span></S.TableCustonHeader>,
       dataIndex: 'realPrice',
       key: 'realPrice',
       render: renderPrice,
   
     },
     {
-      title: 'Diferencia de preço %',
+      title: <S.TableCustonHeader>Diferencia % <span>Concorrente</span></S.TableCustonHeader>,
       dataIndex: 'percentsPrice',
       key: 'percentsPrice',
       render: renderPercents,
@@ -128,7 +129,7 @@ const ProductsTable:FC = () => {
       key: '1',
       status:  [dictStatus['lowPrice'].icon],
       code:'12345678',
-      name: 'John Brown',
+      name: 'lavadoura eletrolux modelo 78374847484',
       price: {value: 150, fontWeight:600},
       ranking: {site: 'www.pontofrio.com.br', siteName: 'Pontofrio', color: lowPriceColor },
       lowPrice:{value: 150},
@@ -172,6 +173,6 @@ const ProductsTable:FC = () => {
   
   
     return( 
-        <Table columns={columns} dataSource={data} /> 
+        <S.StyledTable columns={columns} dataSource={data} /> 
     )
 }; export default ProductsTable;

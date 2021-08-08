@@ -68,7 +68,7 @@ const MonitoredProducts: FC = () => {
                 
                     
                 </Row>
-                <Row>
+                <Row style={{marginTop: 37}}>
                     <ProductsTable/>
                 </Row>
            

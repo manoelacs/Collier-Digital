@@ -14,21 +14,20 @@ export const StyledCol = styled(Col)`
     height: 180px;
 `;
 export const StyledButton = styled(Button)`
-    margin: 0px 35px 0px 84px;
+    margin: 0px 16px 0px 84px;
     width: 127px;
     height: 40px; 
     background: #FFFFFF 0% 0% no-repeat padding-box;
     border-radius: 12px;
     border: none;
     opacity: 1;    
-    
-    .ant-btn > span { 
-        font: normal normal 300 16px/25px Poppins;
-        text-align: center;    
-        letter-spacing: 0px;
-        color: #727272;
-        opacity: 1;
-        
+    font: normal normal 300 16px/25px 'Poppins';
+    text-align: center;    
+    letter-spacing: 0px;
+    color: #727272;
+
+    .ant-btn  span {       
+        opacity: 1;        
     }
 `;
 export const StyledInput = styled(Input)`  
@@ -50,19 +49,42 @@ export const StyledInput = styled(Input)`
     }
 `;
 export const StyledRadioGroup = styled(Radio.Group)`
-margin-left: 35px;
+//margin-left: 35px;
+
 .ant-radio-button-wrapper {
     height: 40px;
-    width: 78px;
-    border-radius: 12px;
+    width: 73px;
+    padding-top: 5px;
+    
     background: #FFFFFF 0% 0% no-repeat padding-box;
     border: none;
+    font: normal normal normal 14px/21px 'Poppins';
+        letter-spacing: 0px;
+        color: #727272;
+        opacity: 1;
     :first-child{
         border-left: none;
     }
+    .ant-radio-button {
+        display: baseline;
+        justify-content: center;
+        align-items: center;
+        align-content: center;
+    }
+}
+.ant-radio-button-wrapper:first-child{
+    border-top-left-radius: 12px;
+    border-bottom-left-radius: 12px;
+};
+.ant-radio-button-wrapper:last-child{
+    border-top-right-radius: 12px;
+    border-bottom-right-radius: 12px;
 }
 .ant-radio-button-wrapper:not(:first-child)::before {
     background: #f5f5f5;
+    height: 40%;
+    top: 10px;
+
 }
 .ant-radio-button-input{
 

@@ -14,47 +14,35 @@
   --unnamed-color-f1c40f: #F1C40F;
   --unnamed-color-9b59b6: #9B59B6;
   --unnamed-color-007bff: #007BFF;
-  
-  /* Font/text values */
-  --unnamed-font-family-poppins: Poppins;
-  --unnamed-font-style-normal: normal;
-  --unnamed-font-weight-300: 300px;
-  --unnamed-font-weight-bold: bold;
-  --unnamed-font-size-14: 14px;
-  --unnamed-font-size-16: 16px;
-  --unnamed-font-size-25: 25px;
-  --unnamed-character-spacing-0: 0px;
-  --unnamed-line-spacing-20: 20px;
-  --unnamed-line-spacing-21: 21px;
-  --unnamed-line-spacing-25: 25px;
 }
   
   /* Character Styles */
-  .unnamed-character-style-1 {
-  font-family: var(--unnamed-font-family-poppins);
-  font-style: var(--unnamed-font-style-normal);
-  font-weight: var(--unnamed-font-weight-bold);
-  font-size: var(--unnamed-font-size-25);
-  line-height: var(--unnamed-line-spacing-20);
-  letter-spacing: var(--unnamed-character-spacing-0);
-  color: var(--unnamed-color-404040);
-  }
-  .unnamed-character-style-2 {
-  font-family: var(--unnamed-font-family-poppins);
-  font-style: var(--unnamed-font-style-normal);
-  font-weight: var(--unnamed-font-weight-300);
-  font-size: var(--unnamed-font-size-16);
-  line-height: var(--unnamed-line-spacing-25);
-  letter-spacing: var(--unnamed-character-spacing-0);
-  color: var(--unnamed-color-727272);
-  }
-  .unnamed-character-style-3 {
-  font-family: var(--unnamed-font-family-poppins);
-  font-style: var(--unnamed-font-style-normal);
-  font-weight: var(--unnamed-font-weight-300);
-  font-size: var(--unnamed-font-size-14);
-  line-height: var(--unnamed-line-spacing-21);
-  letter-spacing: var(--unnamed-character-spacing-0);
-  color: var(--unnamed-color-727272);
-  }
+  /* Character Styles */
+.character-style-1 {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: bold;
+  font-size: 25px;
+  line-height: 20px;
+  letter-spacing: 0;
+  color: mediumGrayColor;
+}
+.character-style-2 {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 25px;
+  letter-spacing: 0;
+  color: basicGrayColor;
+}
+.character-style-3 {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 14 px;
+  line-height: 21 px;
+  letter-spacing: 0;
+  color: basicGrayColor;
+}
 

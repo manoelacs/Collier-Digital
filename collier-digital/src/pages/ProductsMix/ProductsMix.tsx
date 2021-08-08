@@ -9,7 +9,7 @@ import * as S from './styles';
 import * as routes from '../../routes/paths';
 import BreadCrumb from '../../components/BreadCrumb/BreadCrumb';
 import BarChart from '../../components/BarChart/BarCart';
-import MonitoredProductsTable from '../../components/MonitoredProductsTable/MonitoredProductsTable';
+import ProductsMixTable from '../../components/ProductsMixTable/ProductsMixTable';
 const data = [
     { year: '1991', value: 3 },
     { year: '1992', value: 4 },
@@ -72,7 +72,7 @@ const ProductsMix: FC = () => {
                              
                 <Row>
                     <BarChart/> 
-                    <MonitoredProductsTable/>
+                    <ProductsMixTable/>
                 </Row>
                       
            

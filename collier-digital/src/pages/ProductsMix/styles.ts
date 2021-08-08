@@ -25,7 +25,10 @@ export const StyledButton = styled(Button)`
     opacity: 1;    
     
     .ant-btn > span { 
-        font: normal normal 300 16px/25px Poppins;
+        font-weight: 300;
+        font-size: 16px;
+        line-height: 26px;
+        font-family: 'Poppins', sans-serif;
         text-align: center;    
         letter-spacing: 0px;
         color: #727272;
@@ -41,8 +44,10 @@ export const StyledInput = styled(Input)`
     border-radius: 12px;
     margin-bottom: 8px;
     opacity: 1;
-    text-align: left;
-    font: normal normal 300 16px/25px Poppins;
+    text-align: left;    
+    font-size: 16px;
+    line-height: 26px;
+    font-family: 'Poppins', sans-serif;
     letter-spacing: 0px;
     color: #727272;
     
@@ -52,13 +57,19 @@ export const StyledInput = styled(Input)`
     }
 `;
 export const StyledRadioGroup = styled(Radio.Group)`
-margin-left: 35px;
+    margin-left: 35px;
+   
 .ant-radio-button-wrapper {
     height: 40px;
     width: 78px;
     background: #FFFFFF 0% 0% no-repeat padding-box;
     border-bottom: none;
     border-top: none;
+    span{ 
+       
+    }
+    
+
 }
 .ant-radio-button-wrapper:not(:first-child)::before {
     background: #f5f5f5;
@@ -67,7 +78,7 @@ margin-left: 35px;
 
 }
 .ant-radio-group {
-    
+   
     
 }
 `;
