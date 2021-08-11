@@ -52,7 +52,7 @@ const Login: FC = () => {
           </S.Subtitle>
           <Form onFinish={handleLogin}>
             <S.StyledFormItem             
-              name="username"
+              name="login"
               labelCol={{ span: 24 }}
               rules={[{ required: true, message: "Insira o e-mail ou usuário" }]}
               required

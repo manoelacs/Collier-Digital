@@ -1,13 +1,14 @@
 import api, { TOKEN_KEY } from "./api";
 
 export interface ISignIn {
-  username: string;
+  login: string;
   password: string;
 }
 
 export const signIn = async (signInData: ISignIn) => {
-  const { username, password } = signInData;
-  const response = await api.post("login", { username, password });
+  const { login, password } = signInData;
+  const response = await api.post("auth/login", { login, password });
+  console.log(response);
 
   sessionStorage.setItem(TOKEN_KEY, response?.data?.accessToken);
 };

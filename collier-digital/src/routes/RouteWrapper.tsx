@@ -9,7 +9,8 @@ interface Props extends RouteProps {
 }
 
 const RouteWrapper: React.FC<Props> = ({ isPrivate, ...props}) => {
-  const signed = true /* getAuthenticationToken(); */
+  const signed =  getAuthenticationToken();
+  console.log(signed)
 
   if (!signed && isPrivate) {
     return <Redirect to={routes.LOGIN} />;
